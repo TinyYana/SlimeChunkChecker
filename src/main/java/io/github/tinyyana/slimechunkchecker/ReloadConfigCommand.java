@@ -21,7 +21,6 @@ public class ReloadConfigCommand implements CommandExecutor {
 
         String noPerm = plugin.getConfig().getString("noPermission");
         String reloadSuccess = plugin.getConfig().getString("reloadSuccess");
-
         String notPlayer = plugin.getConfig().getString("notPlayer");
 
         if (!(sender instanceof Player)) {
