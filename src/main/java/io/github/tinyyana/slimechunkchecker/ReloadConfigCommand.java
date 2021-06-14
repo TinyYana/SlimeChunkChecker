@@ -22,14 +22,16 @@ public class ReloadConfigCommand implements CommandExecutor {
         String noPerm = plugin.getConfig().getString("noPermission");
         String reloadSuccess = plugin.getConfig().getString("reloadSuccess");
 
-        if(!p.isOp() | !p.hasPermission("SlimeChunkChecker.reload")) {
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
-            return true;
+        if (sender instanceof Player) {
+            if(!p.isOp() | !p.hasPermission("SlimeChunkChecker.reload")) {
+                p.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
+                return true;
+            }
         }
 
         if(args.length == 0) {
             plugin.reloadConfig();
-            p.sendMessage(ChatColor.translateAlternateColorCodes('&',reloadSuccess));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',reloadSuccess));
             return true;
         }
 
