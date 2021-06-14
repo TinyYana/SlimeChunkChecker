@@ -21,12 +21,6 @@ public class ReloadConfigCommand implements CommandExecutor {
 
         String noPerm = plugin.getConfig().getString("noPermission");
         String reloadSuccess = plugin.getConfig().getString("reloadSuccess");
-        String notPlayer = plugin.getConfig().getString("notPlayer");
-
-        if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',notPlayer));
-            return true;
-        }
 
         if(!p.isOp() | !p.hasPermission("SlimeChunkChecker.reload")) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
