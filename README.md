@@ -6,7 +6,9 @@ This is a simple and easy command to check whether the chunk you are in is a sli
 **Here comes the commands:**
 
 /slime - Check if the block under you is slime chunk.
+
 /slm - The command is exactly the same as the above command. It's just an alias.
+
 /slimereload - Reload config file.
 
 **Permission nodes:**
