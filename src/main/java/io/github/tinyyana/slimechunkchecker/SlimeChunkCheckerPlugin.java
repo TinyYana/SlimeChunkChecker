@@ -14,7 +14,6 @@ public final class SlimeChunkCheckerPlugin extends JavaPlugin {
     }
 
     public void onDisable() {
-
     }
 
     public void loadConfig() {
