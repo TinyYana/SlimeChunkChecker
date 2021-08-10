@@ -17,14 +17,14 @@ public class ReloadConfigCommand implements CommandExecutor {
     @Override
     public boolean onCommand(CommandSender sender, Command command, String label, String[] args) {
 
-        Player p = (Player) sender;
+        Player player = (Player) sender;
 
         String noPerm = plugin.getConfig().getString("noPermission");
         String reloadSuccess = plugin.getConfig().getString("reloadSuccess");
 
         if (sender instanceof Player) {
-            if(!p.isOp() | !p.hasPermission("SlimeChunkChecker.reload")) {
-                p.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
+            if(!player.isOp() | !player.hasPermission("SlimeChunkChecker.reload")) {
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
                 return true;
             }
         }
