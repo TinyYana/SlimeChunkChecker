@@ -23,15 +23,15 @@ public class ReloadConfigCommand implements CommandExecutor {
         String reloadSuccess = plugin.getConfig().getString("reloadSuccess");
 
         if (sender instanceof Player) {
-            if(!player.isOp() | !player.hasPermission("SlimeChunkChecker.reload")) {
-                player.sendMessage(ChatColor.translateAlternateColorCodes('&',noPerm));
+            if (!player.isOp() | !player.hasPermission("SlimeChunkChecker.reload")) {
+                player.sendMessage(ChatColor.translateAlternateColorCodes('&', noPerm));
                 return true;
             }
         }
 
-        if(args.length == 0) {
+        if (args.length == 0) {
             plugin.reloadConfig();
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',reloadSuccess));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', reloadSuccess));
             return true;
         }
 

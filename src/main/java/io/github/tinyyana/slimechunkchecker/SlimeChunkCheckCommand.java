@@ -25,11 +25,11 @@ public class SlimeChunkCheckCommand implements CommandExecutor {
         String notPlayer = plugin.getConfig().getString("notPlayer");
 
         if (!(sender instanceof Player)) {
-            sender.sendMessage(ChatColor.translateAlternateColorCodes('&',notPlayer));
+            sender.sendMessage(ChatColor.translateAlternateColorCodes('&', notPlayer));
             return true;
         }
 
-        if(chunk.isSlimeChunk()) {
+        if (chunk.isSlimeChunk()) {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', isSlimeChunk));
         } else {
             p.sendMessage(ChatColor.translateAlternateColorCodes('&', notSlimeChunk));
