@@ -16,5 +16,7 @@ commands:
     aliases: slm
     usage: /<command>
   slimereload:
+    permission: SlimeChunkChecker.reload
+    permission-message: You don't have permission to do this.
     description: reload config.
     usage: /<command>
