@@ -7,8 +7,6 @@ import org.bukkit.configuration.file.YamlConfiguration;
 
 import java.io.File;
 
-import static org.bukkit.Bukkit.getLogger;
-
 public class ConfigLoader {
     private File file;
     private FileConfiguration fileConfiguration;

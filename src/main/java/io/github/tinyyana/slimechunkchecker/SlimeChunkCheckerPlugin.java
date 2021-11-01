@@ -23,8 +23,7 @@ public final class SlimeChunkCheckerPlugin extends JavaPlugin {
     public void onDisable() {
     }
 
-    public void checkUpdate() {
-        if (!config.get().getBoolean("versionCheck")) return;
+    private void checkUpdate() {
         new UpdateChecker(this, 86279).getVersion(version -> {
             if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
                 getLogger().info("Plugin is the latest version.");
