@@ -3,6 +3,7 @@ package io.github.tinyyana.slimechunkchecker;
 import io.github.tinyyana.slimechunkchecker.Commands.ChunkCheck;
 import io.github.tinyyana.slimechunkchecker.Commands.ReloadConfig;
 import io.github.tinyyana.slimechunkchecker.Utils.ConfigLoader;
+import io.github.tinyyana.slimechunkchecker.Utils.UpdateChecker;
 import org.bukkit.plugin.java.JavaPlugin;
 
 public final class SlimeChunkCheckerPlugin extends JavaPlugin {
@@ -13,12 +14,24 @@ public final class SlimeChunkCheckerPlugin extends JavaPlugin {
     @Override
     public void onEnable() {
         config = new ConfigLoader("config");
+        checkUpdate();
         getCommand("slime").setExecutor(new ChunkCheck(this));
         getCommand("slimereload").setExecutor(new ReloadConfig(this));
     }
 
     @Override
     public void onDisable() {
+    }
+
+    public void checkUpdate() {
+        if (!config.get().getBoolean("versionCheck")) return;
+        new UpdateChecker(this, 86279).getVersion(version -> {
+            if (this.getDescription().getVersion().equalsIgnoreCase(version)) {
+                getLogger().info("Plugin is the latest version.");
+            } else {
+                getLogger().warning("Plugin is outdated. Need to be updated!");
+            }
+        });
     }
 
     public void onLoad() {

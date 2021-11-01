@@ -1,6 +1,7 @@
 package io.github.tinyyana.slimechunkchecker.Utils;
 
 import io.github.tinyyana.slimechunkchecker.SlimeChunkCheckerPlugin;
+import org.bukkit.Bukkit;
 import org.bukkit.configuration.file.FileConfiguration;
 import org.bukkit.configuration.file.YamlConfiguration;
 
@@ -28,13 +29,13 @@ public class ConfigLoader {
             try {
                 plugin.saveResource(this.fileName + ".yml", false);
             } catch (IllegalArgumentException e) {
-                getLogger().info("Failed to get file " + this.fileName + ".yml");
+                Bukkit.getLogger().info("Failed to get file " + this.fileName + ".yml");
             }
         }
 
         try {
             this.fileConfiguration = YamlConfiguration.loadConfiguration(this.file);
-            getLogger().info("Load " + this.fileName + ".yml" + " successfully");
+            Bukkit.getLogger().info("Load " + this.fileName + ".yml" + " successfully");
         } catch (Exception e) {
             e.printStackTrace();
         }
