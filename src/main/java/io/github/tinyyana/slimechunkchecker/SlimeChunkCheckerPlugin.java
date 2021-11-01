@@ -1,7 +1,7 @@
 package io.github.tinyyana.slimechunkchecker;
 
-import io.github.tinyyana.slimechunkchecker.Commands.ReloadConfig;
 import io.github.tinyyana.slimechunkchecker.Commands.ChunkCheck;
+import io.github.tinyyana.slimechunkchecker.Commands.ReloadConfig;
 import io.github.tinyyana.slimechunkchecker.Utils.ConfigLoader;
 import org.bukkit.plugin.java.JavaPlugin;
 
