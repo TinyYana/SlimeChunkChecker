@@ -34,9 +34,9 @@ public class ConfigLoader {
 
         try {
             this.fileConfiguration = YamlConfiguration.loadConfiguration(this.file);
+            getLogger().info("Load " + this.fileName + ".yml" + " successfully");
         } catch (Exception e) {
             e.printStackTrace();
-            getLogger().info("Load " + this.fileName + ".yml" + " successfully");
         }
     }
 
