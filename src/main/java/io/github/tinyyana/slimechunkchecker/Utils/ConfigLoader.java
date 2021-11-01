@@ -28,7 +28,7 @@ public class ConfigLoader {
             try {
                 plugin.saveResource(this.fileName + ".yml", false);
             } catch (IllegalArgumentException e) {
-                getLogger().info("Failed to get file " + this.fileName + "yml");
+                getLogger().info("Failed to get file " + this.fileName + ".yml");
             }
         }
 
