@@ -10,12 +10,14 @@ public final class SlimeChunkCheckerPlugin extends JavaPlugin {
     public static ConfigLoader config;
     public static SlimeChunkCheckerPlugin plugin;
 
+    @Override
     public void onEnable() {
         config = new ConfigLoader("config");
         getCommand("slime").setExecutor(new ChunkCheck(this));
         getCommand("slimereload").setExecutor(new ReloadConfig(this));
     }
 
+    @Override
     public void onDisable() {
     }
 
