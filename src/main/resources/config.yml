@@ -4,6 +4,7 @@ notSlimeChunk: "&cThe chunk is not a slime chunk..."
 reloadSuccess: "&6SlimeChunkChecker Plugin reloaded."
 noPermission: "&4You don't have the permission to do this, sorry."
 notPlayer: "&cYou must be a player to execute this command!"
+versionCheck: true
 
 #Language: 繁體中文
 #isSlimeChunk: "&a此區塊是一個史萊姆區塊!"
