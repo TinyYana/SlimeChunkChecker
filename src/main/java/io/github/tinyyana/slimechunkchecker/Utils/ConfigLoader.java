@@ -33,9 +33,18 @@ public class ConfigLoader {
 
         try {
             this.fileConfiguration = YamlConfiguration.loadConfiguration(this.file);
-            Bukkit.getLogger().info("Load " + this.fileName + ".yml" + " successfully");
+            addDefaultValue();
         } catch (Exception e) {
+            Bukkit.getLogger().warning("Failed to load " + this.fileName + ".yml");
             e.printStackTrace();
+        }
+    }
+
+    public void save() {
+        try {
+            this.fileConfiguration.save(file);
+        } catch (Exception e) {
+            System.out.println("Failed to save the file:[ " + this.fileName + ".yml]");
         }
     }
 
@@ -43,4 +52,11 @@ public class ConfigLoader {
         return this.fileConfiguration;
     }
 
+    private void addDefaultValue() {
+        String header = "Language: English";
+        fileConfiguration.options().header(header).copyHeader(true);
+        fileConfiguration.options().copyDefaults(true);
+        fileConfiguration.addDefault("versionCheck", true);
+        save();
+    }
 }

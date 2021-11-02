@@ -1,0 +1,7 @@
+#Language: 繁體中文
+isSlimeChunk: "&a此區塊是一個史萊姆區塊!"
+notSlimeChunk: "&c這個區塊不是一個史萊姆區塊..."
+reloadSuccess: "&6SlimeChunkChecker 插件已經重新讀取"
+noPermission: "&4你沒有權限使用此指令。"
+notPlayer: "&c你必須是玩家才可以使用此指令!"
+versionCheck: true
