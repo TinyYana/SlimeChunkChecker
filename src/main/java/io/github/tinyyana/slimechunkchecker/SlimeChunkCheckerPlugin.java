@@ -15,12 +15,16 @@ public final class SlimeChunkCheckerPlugin extends JavaPlugin {
     public void onEnable() {
         config = new ConfigLoader("config");
         checkUpdate();
-        getCommand("slime").setExecutor(new ChunkCheck(this));
-        getCommand("slimereload").setExecutor(new ReloadConfig(this));
+        loadCommands();
     }
 
     @Override
     public void onDisable() {
+    }
+
+    private void loadCommands() {
+        getCommand("slime").setExecutor(new ChunkCheck(this));
+        getCommand("slimereload").setExecutor(new ReloadConfig(this));
     }
 
     private void checkUpdate() {
