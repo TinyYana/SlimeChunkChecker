@@ -26,16 +26,14 @@ public class ReloadConfig implements CommandExecutor {
 
         Player player = (Player) sender;
 
-        if (!player.isOp() | !player.hasPermission("SlimeChunkChecker.reload")) {
-            Chat.send(player, "noPermission");
-            return true;
-        }
-
         if (args.length == 0) {
-            plugin.reloadConfig();
-            Chat.send(player, "reloadSuccess");
-            return true;
+            if (player.hasPermission("SlimeChunkChecker.reload") || player.isOp()) {
+                plugin.reloadConfig();
+                Chat.send(player, "reloadSuccess");
+                return true;
+            }
         }
-        return false;
+        Chat.send(player, "noPermission");
+        return true;
     }
 }
